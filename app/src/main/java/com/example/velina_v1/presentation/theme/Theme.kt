@@ -1,4 +1,4 @@
-package com.example.velina_v1.ui.theme
+package com.example.velina_v1.presentation.theme
 
 import android.app.Activity
 import android.os.Build

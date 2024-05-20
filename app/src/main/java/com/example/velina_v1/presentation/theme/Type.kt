@@ -1,4 +1,4 @@
-package com.example.velina_v1.ui.theme
+package com.example.velina_v1.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

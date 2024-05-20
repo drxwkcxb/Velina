@@ -8,10 +8,12 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.velina_v1.domain.repository.DataStoreRepository
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
-class DataStoreRepositoryImpl(private val context: Context) : DataStoreRepository {
+
+class DataStoreRepositoryImpl ( @ApplicationContext private val context: Context) : DataStoreRepository {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("preferences")
 
     init {

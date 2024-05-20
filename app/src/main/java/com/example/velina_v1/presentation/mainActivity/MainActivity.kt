@@ -1,4 +1,4 @@
-package com.example.velina_v1
+package com.example.velina_v1.presentation.mainActivity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.velina_v1.ui.theme.Velina_v1Theme
+import com.example.velina_v1.presentation.theme.Velina_v1Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
