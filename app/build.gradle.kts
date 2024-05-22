@@ -75,6 +75,8 @@ dependencies {
 // HILT
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    // KotlinExtention
+    implementation(libs.androidx.activity.ktx)
 }
 kapt {
     correctErrorTypes = true
