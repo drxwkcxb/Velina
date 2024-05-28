@@ -1,16 +1,23 @@
 package com.example.velina_v1.presentation.mainActivity
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -20,8 +27,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.velina_v1.R
 import com.example.velina_v1.presentation.mainActivity.viewModel.MainActivityViewModel
 import com.example.velina_v1.presentation.theme.Velina_v1Theme
@@ -39,11 +49,9 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Surface(modifier = Modifier.padding(innerPadding)){
                         if (viewModel.isOnboardingPassed) {
-                            Greeting(
-                                name = "Android"
-                            )
+                            Spacer(modifier = Modifier.padding(innerPadding))
                         } else {
-                            OnboardingView()
+                            SplashView()
                         }
                     }
                 }
@@ -53,40 +61,49 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun OnboardingView() {
-        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally) {
+private fun SplashView() {
+        Box(modifier = Modifier.fillMaxSize()) {
             Text(
-                text = "Welcome to Velina - Your F1 Data Center",
-                color = colorResource(id = R.color.white ),
-                style = MaterialTheme.typography.headlineLarge,
-//                textAlign = TextAlign.Center
+                text = "Welcome to Velina - \nYour F1 Data Center",
+                color = colorResource(id = R.color.mainOrange ),
+                lineHeight = 30.sp,
+                fontSize = 24.sp,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.align(Alignment.Center)
             )
-            Spacer(modifier = Modifier.height(160.dp))
-
-            Text(text = "Compose makes it easy to build beautiful UIs.",
-//                textAlign = TextAlign.Center
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .offset(x = 115.dp, y = 35.dp)
+                    .size(234.dp)
+                    .border(
+                        width = 2.dp,
+                        color = colorResource(id = R.color.mainOrange),
+                        shape = CircleShape
+                    )
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Box(
+                modifier = Modifier
+                    .align(Alignment.CenterStart)
+                    .offset(x = -130.dp, y = 180.dp)
+                    .size(234.dp)
+                    .border(
+                        width = 2.dp,
+                        color = colorResource(id = R.color.mainOrange),
+                        shape = CircleShape
+                    )
+            )
+            Box(
+                modifier = Modifier
+                    .align(Alignment.CenterStart)
+                    .offset(x = 0.dp, y = 280.dp)
+                    .size(234.dp)
+                    .border(
+                        width = 2.dp,
+                        color = colorResource(id = R.color.mainOrange),
+                        shape = CircleShape
+                    )
+            )
 
-            Button(onClick = { /* Handle click */ }) {
-                Text("Click Me")
-            }
         }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Velina_v1Theme {
-        Greeting("Android")
-    }
 }

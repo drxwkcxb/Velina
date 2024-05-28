@@ -69,6 +69,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+//  Coil
+    implementation (libs.coil.kt.coil.compose)
+    implementation (libs.coil.svg)
 // datastore
     implementation(libs.androidx.datastore.preferences)
 
