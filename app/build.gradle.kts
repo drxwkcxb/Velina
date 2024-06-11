@@ -72,6 +72,7 @@ dependencies {
 //  Coil
     implementation (libs.coil.kt.coil.compose)
     implementation (libs.coil.svg)
+    implementation(libs.coil.compose.v210)
 // datastore
     implementation(libs.androidx.datastore.preferences)
 
@@ -80,6 +81,7 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     // KotlinExtention
     implementation(libs.androidx.activity.ktx)
+
 }
 kapt {
     correctErrorTypes = true

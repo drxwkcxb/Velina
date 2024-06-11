@@ -3,5 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="mainOrange">#FF9900</color>
+    <color name="mclarenOrange">#FF9900</color>
+    <color name="ferrariRed">#BA0107</color>
+    <color name="alpinePink">#F296C7</color>
+    <color name="redbullBlue">#002F65</color>
+    <color name="vcarbBlue">#1534CC</color>
+    <color name="astnomartinGreen">#01584F</color>
+    <color name="haasWhite">#F8F9FF</color>
+    <color name="stakeGreen">#18E555</color>
+    <color name="williamsBlue">#02195C</color>
+    <color name="mercedesBlue">#1DC5B4</color>
+
 </resources>
